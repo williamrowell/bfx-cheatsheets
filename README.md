@@ -10,7 +10,7 @@ Cheatsheets for my commonly used bioinformatics tasks
 
 ```yaml
   - name: bfx
-    path: /Users/rowellw/.config/cheat/cheatsheets/bfx
+    path: $HOME/.config/cheat/cheatsheets/bfx
     tags: [ bfx ]
     readonly: true
 ```
