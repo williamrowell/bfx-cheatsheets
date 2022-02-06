@@ -9,8 +9,9 @@ Cheatsheets for my commonly used bioinformatics tasks
 - add to cheatpath in ~/.config/cheat/conf.yml:
 
 ```yaml
+  # adjust path prefix to your homedir
   - name: bfx
-    path: $HOME/.config/cheat/cheatsheets/bfx
+    path: /home/<user>/.config/cheat/cheatsheets/bfx
     tags: [ bfx ]
     readonly: true
 ```
