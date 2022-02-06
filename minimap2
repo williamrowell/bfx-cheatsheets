@@ -1,0 +1,7 @@
+---
+tags: [ alignment, bam, sam, paf ]
+---
+# https://lh3.github.io/minimap2/minimap2.html
+
+# align hifiasm assembly to reference
+minimap2 -t 12 -L --secondary=no --eqx -ax asm5 -R '@RG\tID:samplename_hifiasm\tSM:samplename' ref.fasta *.asm.fasta

@@ -1,7 +1,8 @@
 ---
-tags: [ compression, index]
+tags: [ compression, index, vcf, bcf, bed, gff ]
 ---
 # https://www.htslib.org/doc/tabix.html
+
 # generate tabix index (.tbi) of compressed, sorted VCF
 tabix -p vcf input.vcf.gz
 

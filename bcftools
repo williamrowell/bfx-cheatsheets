@@ -1,0 +1,21 @@
+---
+tags: [ variants, vcf, bcf ]
+---
+# https://samtools.github.io/bcftools/bcftools.html
+
+# convert BCF to VCF
+bcftools view --threads 4 -Oz input.bcf -o output.vcf.gz
+
+# concatentate VCF files covering different regions
+bcftools concat -a -Oz -o output.vcf.gz input1.vcf.gz input2.vcf.gz
+
+# normalize variants in VCF
+bcftools norm --threads 4 --multiallelics - --output-type b \
+    --fasta-ref ref.fasta input.vcf -o output.bcf
+
+# fix ploidy of variants
+bcftools +fixploidy input.vcf -- \
+    -s sex.txt -p human_GRCh38_no_alt_analysis_set.ploidy.txt -o output.vcf
+
+# fill allele count and frequency tags
+bcftools +fill-tags --threads 4 -o output.vcf input.vcf

@@ -1,0 +1,31 @@
+---
+tags: [ alignment, fastq, fasta, bam ]
+---
+# https://www.htslib.org/doc/samtools.html
+
+# view a BAM, including the header
+samtools view -h input.bam
+
+# view only a BAM header
+samtools view -H input.bam
+
+# randomly sample 10% of reads in a BAM (seed=1)
+samtools view -bs 1.1 input.bam > subsample.bam
+
+# index a BAM (generate a .bai)
+samtools index input.bam
+
+# extract aligned reads from a region in an indexed BAM
+samtools view input.bam chr:start-end
+
+# merge BAMs
+samtools merge -@ 3 merged.output.bam input1.bam input2.bam
+
+# extract FASTA from a BAM
+samtools fasta -@ 3 input.bam > output.fasta
+
+# index a FASTA (generate a .fai)
+samtools faidx input.fasta
+
+# extract subsequence from an indexed FASTA
+samtools faidx input.fasta chr:start-end

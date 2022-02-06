@@ -1,0 +1,19 @@
+---
+tags: [ kmers ]
+---
+# https://github.com/gmarcais/Jellyfish
+
+# count kmers in HiFi FASTA file
+jellyfish count --canonical --mer-len=21 --size=1000000000 \
+    --threads=24 --output=output.jf input.fasta
+
+# dump kmers
+jellyfish dump -c -t input.jf > output.kmers
+
+# merge kmers
+jellyfish merge -o merged.output.jf input1.jf input2.jf
+
+# dump kmers and filter for modimers (mod 5003)
+jellyfish dump -c -t input.jf \
+    | PYTHONHASHSEED=0 python modimer.py -N 5003 /dev/stdin \
+    | sort | gzip > output.modimers.tsv.gz

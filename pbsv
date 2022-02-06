@@ -1,7 +1,8 @@
 ---
-tags: [ variants ]
+tags: [ variants, vcf ]
 ---
 # https://github.com/PacificBiosciences/pbsv
+
 # discover SV signatures from HiFi aBAM
 pbsv discover --hifi --tandem-repeats input.tr.bed input.bam output.svsig.gz
 

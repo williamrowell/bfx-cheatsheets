@@ -1,0 +1,10 @@
+---
+tags: [ fasta, fastq ]
+---
+# https://github.com/lh3/seqtk
+
+# convert FASTQ to FASTA
+seqtk seq -A input.fastq.gz > output.fasta
+
+# convert multiline FASTQ to a 4-line FASTQ
+seqtk seq -l0 in.fq > out.fq

@@ -1,7 +1,8 @@
 ---
-tags: [ assembly ]
+tags: [ assembly, fasta, gfa ]
 ---
 # https://github.com/lh3/calN50
+
 # compute auN and N50 from FASTA
 k8 calN50.js ctg.fa
 

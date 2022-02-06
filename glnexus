@@ -1,0 +1,8 @@
+---
+tags: [ variants, vcf, gvcf ]
+---
+# https://github.com/dnanexus-rnd/GLnexus
+
+# merge gVCFs
+glnexus_cli --threads 24 --dir ./scratch_dir \
+    --config DeepVariant_unfiltered input1.gvcf input2.gvcf > output.bcf

@@ -1,7 +1,7 @@
 ---
-tags: [ alignment ]
+tags: [ alignment, bam ]
 ---
 # https://github.com/PacificBiosciences/pbmm2
+
 # align human HiFi uBAM/FASTQ to reference
 pbmm2 align --num-threads 24 --preset HIFI --sample sample_name --sort --unmapped ref.fasta input.fastq.gz output.bam
-

@@ -1,8 +1,9 @@
 ---
-tags: [ assembly ]
+tags: [ assembly, gfa ]
 ---
 # https://github.com/chhylp123/hifiasm
 # https://hifiasm.readthedocs.io/en/latest/
+
 # generate a phased psuedohaplotig assembly
 hifiasm -o prefix.asm -t 48 *.fasta.gz
 

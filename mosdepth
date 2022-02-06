@@ -1,0 +1,7 @@
+---
+tags: [ coverage, bam ]
+---
+# https://github.com/brentp/mosdepth
+
+# calculate median coverage in 500bp windows
+mosdepth --threads 3 --by 500 --no-per-base --use-median prefix input.bam
