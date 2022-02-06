@@ -1,0 +1,9 @@
+---
+tags: [ variants ]
+---
+# https://github.com/PacificBiosciences/pbsv
+# discover SV signatures from HiFi aBAM
+pbsv discover --hifi --tandem-repeats input.tr.bed input.bam output.svsig.gz
+
+# call SVs from HiFi datasets
+pbsv call --hifi -m 20 --num-threads 8 ref.fasta *.svsig.gz output.vcf

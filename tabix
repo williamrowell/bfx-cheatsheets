@@ -1,0 +1,12 @@
+---
+tags: [ compression, index]
+---
+# https://www.htslib.org/doc/tabix.html
+# generate tabix index (.tbi) of compressed, sorted VCF
+tabix -p vcf input.vcf.gz
+
+# generate tabix index (.tbi) of compressed, sorted BED
+tabix -p bed input.bed.gz
+
+# extract region from tabix-indexed, compressed VCF
+tabix input.vcf.gz chromosome:start-end

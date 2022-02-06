@@ -1,0 +1,6 @@
+---
+tags: [ assembly ]
+---
+# https://github.com/lh3/gfatools
+# convert GFA to segment FASTA
+gfatools gfa2fa input.gfa > output.fasta

@@ -1,0 +1,12 @@
+---
+tags: [ assembly ]
+---
+# https://github.com/lh3/calN50
+# compute auN and N50 from FASTA
+k8 calN50.js ctg.fa
+
+# compute auNG and NG50 for a 3.1Gbp genome
+k8 calN50.js -L3.1g ctg.fa.fai
+
+# get the genome size from a .fai file
+k8 calN50.js -f ref.fa.fai ctg.fa

@@ -1,0 +1,15 @@
+---
+tags: [ assembly ]
+---
+# https://github.com/chhylp123/hifiasm
+# https://hifiasm.readthedocs.io/en/latest/
+# generate a phased psuedohaplotig assembly
+hifiasm -o prefix.asm -t 48 *.fasta.gz
+
+# Hi-C phasing with paired-end short reads in two FASTQ files
+hifiasm -o prefix.asm -t 48 --h1 read1.fq.gz --h2 read2.fq.gz HiFi.fq.gz
+
+# Trio binning assembly (requiring https://github.com/lh3/yak)
+yak count -b37 -t24 -o pat.yak <(cat pat_1.fq.gz pat_2.fq.gz) <(cat pat_1.fq.gz pat_2.fq.gz)
+yak count -b37 -t24 -o mat.yak <(cat mat_1.fq.gz mat_2.fq.gz) <(cat mat_1.fq.gz mat_2.fq.gz)
+hifiasm -o prefix.asm -t48 -1 pat.yak -2 mat.yak HiFi.fa.gz

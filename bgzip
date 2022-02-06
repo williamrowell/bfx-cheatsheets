@@ -1,0 +1,6 @@
+---
+tags: [ compression ]
+---
+# https://www.htslib.org/doc/bgzip.html
+# compress FASTA, FASTQ, BED, VCF in place
+bgzip --threads 2 input.vcf
