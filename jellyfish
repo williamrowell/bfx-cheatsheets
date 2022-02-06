@@ -14,6 +14,7 @@ jellyfish dump -c -t input.jf > output.kmers
 jellyfish merge -o merged.output.jf input1.jf input2.jf
 
 # dump kmers and filter for modimers (mod 5003)
+# https://github.com/PacificBiosciences/pb-human-wgs-workflow-snakemake/blob/main/scripts/modimer.py
 jellyfish dump -c -t input.jf \
     | PYTHONHASHSEED=0 python modimer.py -N 5003 /dev/stdin \
     | sort | gzip > output.modimers.tsv.gz
